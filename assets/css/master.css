@@ -23,7 +23,7 @@
 .body-color {
   width: 100%;
   height: 80vh;
-  background-color: rgb(s, 210, 201);
+  background-color: rgb(212, 210, 201);
 }
 
 .container {
@@ -37,13 +37,12 @@
 
 .navbar {
   width: 100%;
-
+  height: 7%;
   display: flex;
 }
 
 .left-navbar {
   width: 40%;
-  height: 75px;
   background-color: #EDEDED;
   display: flex;
   justify-content: center;
@@ -55,7 +54,6 @@
 
 .right-navbar {
   width: 60%;
-  height: 75px;
   background-color: #EDEDED;
   display: flex;
   padding: 0 20px;
@@ -98,18 +96,21 @@
 /* MODIFICHE MAIN */
 .main {
   width: 100%;
+  height: 93%;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .left-main {
   width: 40%;
-  background: green;
+  height: 100%;
+  background: #fff;
 }
 
 .right-main {
   width: 60%;
+  height: 100%;
   background-color: red;
 }
 
@@ -168,4 +169,43 @@
 
 .search .content-search input::placeholder{
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* MODIFICO CHAT */
+
+.chat {
+  display: flex;
+}
+
+.content-chat {
+  width: 100%;
+  background-color: #fff;
+  border-bottom: 1px solid rgb(217, 215, 217);
+}
+
+.user {
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 15px;
+}
+
+.content-user {
+  width: 65px;
+  margin-right: 15px;
+}
+
+.chat .content-chat .user .content-user img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.chat .content-chat .user .text-user {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+/* MODIFICO RIGHT MAIN */
+
+.conversation {
+  height: 100%;
+  width: 100%;
 }
