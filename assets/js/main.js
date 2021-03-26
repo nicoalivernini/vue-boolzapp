@@ -2,6 +2,7 @@ var app = new Vue ({
 
     el: '#root',
     data: {
+      imgSrc: 'assets/img/avatar_',
       contacts: [
       	{
       		name: 'Michele',
@@ -90,6 +91,7 @@ var app = new Vue ({
     }, //Chiusura data
 
     computed: {
+
       selezioneMessaggi: function () {
       let messageSent = contacts.filter(this.contacts.messages.status == 'sent');
       let messageReceived = contacts.filter(this.contacts.messages.status == 'received');
@@ -99,6 +101,7 @@ var app = new Vue ({
   }, // Chiusura Computed
 
     methods: {
+
 
     }, //Chiusura methods
 

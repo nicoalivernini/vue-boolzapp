@@ -190,6 +190,7 @@
 .user {
   display: flex;
   justify-content: flex-start;
+  align-items: center;
   padding: 10px 15px;
 }
 
@@ -205,6 +206,12 @@
 
 .chat .content-chat .user .text-user {
   font-family: 'Source Sans Pro', sans-serif;
+}
+
+.chat .content-chat .user .text-user p {
+  font-weight: 600;
+  font-size: 18px;
+  letter-spacing: 1px;
 }
 
 /* MODIFICO RIGHT MAIN */
