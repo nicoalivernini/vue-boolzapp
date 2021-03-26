@@ -29,7 +29,7 @@
 .container {
   width: 90%;
   height: 90%;
-  background-color: blue;
+  /* background-color: blue; */
   position: absolute;
   left: 5%;
   top: 5%;
@@ -56,6 +56,8 @@
   width: 60%;
   background-color: #EDEDED;
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0 20px;
   border: 1px solid rgb(217, 215, 217);
   font-family: 'Source Sans Pro', sans-serif;
@@ -77,9 +79,10 @@
 }
 
 .left-navbar .title .content-title img, .right-navbar .title .content-title img {
-  width: 10%;
+  width: 45px;
   border-radius: 50%;
 }
+
 
 .left-navbar .title .content-icon, .right-navbar .title .content-icon {
   display: flex;
@@ -175,6 +178,7 @@
 
 .chat {
   display: flex;
+  flex-direction: column;
 }
 
 .content-chat {
