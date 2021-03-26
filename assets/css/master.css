@@ -94,3 +94,78 @@
   font-size: 20px;
   margin: 0 7px;
 }
+
+/* MODIFICHE MAIN */
+.main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.left-main {
+  width: 40%;
+  background: green;
+}
+
+.right-main {
+  width: 60%;
+  background-color: red;
+}
+
+/* MODIFICHE LEFT MAIN */
+
+.alert {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+  background-color: #9DE1FE;
+}
+
+.alert .content-alert svg {
+  color: #fff;
+  margin-right: 10px;
+}
+
+.alert .text-alert p {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.alert .text-alert span {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 300;
+  text-decoration: underline;
+}
+
+/* MODIFICO SEARCH */
+
+.search {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+  background-color: #EDEDED;
+}
+
+.search .content-search {
+  background-color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.search .content-search i {
+  padding: 5px 15px;
+  color: rgb(145, 145, 145);
+}
+
+.search .content-search input {
+  padding: 5px;
+  border: 0;
+  width: 85%;
+}
+
+.search .content-search input::placeholder{
+  font-family: 'Source Sans Pro', sans-serif;
+}
