@@ -111,7 +111,7 @@
 .right-main {
   width: 60%;
   height: 100%;
-  background-color: red;
+  /* background-color: red; */
 }
 
 /* MODIFICHE LEFT MAIN */
@@ -208,4 +208,39 @@
 .conversation {
   height: 100%;
   width: 100%;
+  background-image: url("../img/mine.jpg");
+  position: relative;
+}
+
+
+.footer-conversation {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background-color: #EDEDED;
+  width: 60%;
+  height: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-footer-conversation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* padding: 0 15px; */
+}
+
+.footer-conversation .content-footer-conversation svg {
+  width: 15%;
+  color: rgb(145, 145, 145);
+}
+
+.footer-conversation .content-footer-conversation input {
+  width: 100%;
+  border: 0;
+  padding: 10px;
+  border-radius: 15px;
 }
