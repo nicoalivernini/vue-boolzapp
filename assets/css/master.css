@@ -223,6 +223,35 @@
   position: relative;
 }
 
+.content-conversation {
+  height: 95%;
+  padding: 0 65px;
+}
+
+.text-conversation {
+  position: relative;
+}
+
+.content-conversation .sent svg {
+  color: rgb(220, 248, 198);
+  position: absolute;
+  right: -6px;
+}
+
+.content-conversation .received svg {
+  color: #fff;
+  position: absolute;
+  left: -6px;
+}
+
+.content-conversation .bg-text-conversation .title {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-weight: 600;
+}
+
+.content-conversation .bg-text-conversation .message {
+  font-family: 'Source Sans Pro', sans-serif;
+}
 
 .footer-conversation {
   position: absolute;
@@ -254,4 +283,28 @@
   border: 0;
   padding: 10px;
   border-radius: 15px;
+}
+
+/* CLASSI DINAMICHE */
+
+.sent {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.sent .bg-text-conversation {
+  background-color: rgb(220, 248, 198);
+  padding:6px 7px 8px 9px;
+  border-radius: 5px;
+}
+
+.received {
+  display: flex;
+  align-items: flex-start;
+}
+
+.received .bg-text-conversation {
+  background-color: #fff;
+  padding:6px 7px 8px 9px;
+  border-radius: 5px;
 }
