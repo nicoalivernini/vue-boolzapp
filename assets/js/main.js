@@ -108,14 +108,24 @@ var app = new Vue ({
       },
 
       insertMessage: function () {
-        var today = new Date();
-        var date = today.getHours() + '-' + today.getMinutes();
+        let today = new Date();
+        let giorno = today.getDay();
+        let mese = today.getMonth();
+        let anno = today.getFullYear();
+        let ora = today.getHours();
+        let minuti = today.getMinutes();
+        let secondi = today.getSeconds();
+
+        let orario = `${giorno}/${mese}/${anno} ${ora}:${minuti}:${secondi}`;
+
+        console.log(orario);
+
 
         var newMessage = {
-            date: date,
-            text: this.newMessage,
-            status: 'sent',
-          };
+          date: orario,
+          text: this.newMessage,
+          status: 'sent',
+        };
 
         this.contacts[this.index].messages.push(newMessage);
         this.newMessage = '';
