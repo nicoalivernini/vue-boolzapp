@@ -35,9 +35,9 @@
         <div class="right-navbar">
           <div class="title">
             <div class="content-title">
-              <img src="assets/img/avatar_1.jpg" alt="">
+              <img :src="imgSrc + ((index)+1) + '.jpg'" alt="">
               <div class="text-title">
-                <p>{{ contacts[0].name }}</p>
+                <p>{{ contacts[index].name }}</p>
                 <p>Ultimo accesso alle:</p>
               </div>
             </div>
