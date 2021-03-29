@@ -5,6 +5,7 @@ var app = new Vue ({
       imgSrc: 'assets/img/avatar_',
       index: 0,
       newMessage: '',
+      searchUtente: '',
       contacts: [
       	{
       		name: 'Michele',
@@ -94,7 +95,7 @@ var app = new Vue ({
 
     computed: {
 
-    },
+    },//Chiusura Computed
 
     methods: {
 
@@ -136,26 +137,22 @@ var app = new Vue ({
 
           this.contacts[this.index].messages.push(newMessage);
           this.newMessage = '';
+
+          //Risposta automatica
+          var timer = setTimeout(() => {
+            var replyMessage = {
+              date: orario,
+              text: 'Va bene',
+              status: 'received',
+            }
+            this.contacts[this.index].messages.push(replyMessage);
+          }, 1000);
         }
+      },
 
-        //Risposta automatica
-        var timer = setTimeout(() => {
-          var replyMessage = {
-            date: orario,
-            text: 'Va bene',
-            status: 'received',
-          }
-
-
-          console.log(replyMessage);
-          console.log(this.contacts[this.index].messages);
-          this.contacts[this.index].messages.push(replyMessage);
-          console.log(this.contacts[this.index].messages);
-        }, 1000);
-
-
-
-
+      //Ricerca
+      ricerca: function () {
+        console.log(this.searchUtente);
       }
 
 

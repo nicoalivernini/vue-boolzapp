@@ -233,6 +233,8 @@
 .content-conversation {
   height: calc(100% - 50px);
   padding: 0 65px;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
 .text-conversation {
@@ -267,6 +269,22 @@
   font-size: 11px;
   color: rgba(0, 0, 0, 0.45);
 }
+
+/* .content-conversation .bg-text-conversation .menu-tendina {
+
+}
+
+.content-conversation .bg-text-conversation .menu-tendina:hover {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 0%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 1);
+  padding: 5px;
+  cursor: pointer;
+} */
+
 
 .footer-conversation {
   position: absolute;
@@ -322,6 +340,7 @@
   background-color: #fff;
   padding:6px 7px 8px 9px;
   border-radius: 5px;
+  position: relative;
 }
 
 .active {

@@ -57,13 +57,14 @@
             </div>
             <div class="text-alert">
               <p>Ricevi notifiche di nuovi messaggi</p>
-              <span>Attica notifiche desktop</span>
+              <span>Attiva notifiche desktop</span>
             </div>
           </div>
           <div class="search">
             <div class="content-search">
               <i class="fas fa-search"></i>
-              <input type="text" name="" value="" placeholder="Cerca o inizia una nuova chat">
+              <input type="text" value="" placeholder="Cerca o inizia una nuova chat" v-model="searchUtente">
+              <p>{{searchUtente}}</p>
             </div>
           </div>
           <div class="chat">
@@ -83,10 +84,11 @@
         <div class="right-main">
           <div class="conversation">
             <div class="content-conversation" >
-              <div class="text-conversation" :class="messaggio.status" v-for="messaggio in contacts[index].messages"> <!-- sent -->
+              <div class="text-conversation" :class="messaggio.status" v-for="messaggio in contacts[index].messages">
                 <div class="bg-text-conversation">
                   <p class="message">{{messaggio.text}}</p>
                   <span class="date">{{getData(messaggio.date)}}</span>
+                  <!-- <div class="menu-tendina"><i class="fas fa-chevron-down"></i></div> -->
                 </div>
                 <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 13" width="8" height="13"><path opacity=".13" d="M5.188 1H0v11.193l6.467-8.625C7.526 2.156 6.958 1 5.188 1z"></path><path fill="currentColor" d="M5.188 0H0v11.193l6.467-8.625C7.526 1.156 6.958 0 5.188 0z"></path></svg> -->
               </div>
