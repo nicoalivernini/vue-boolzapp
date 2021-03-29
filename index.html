@@ -38,7 +38,7 @@
               <img :src="imgSrc + ((index)+1) + '.jpg'" alt="">
               <div class="text-title">
                 <p>{{ contacts[index].name }}</p>
-                <p>Ultimo accesso alle:</p>
+                <p>Ultimo accesso alle: 15:30</p>
               </div>
             </div>
             <div class="content-icon">
@@ -67,7 +67,7 @@
             </div>
           </div>
           <div class="chat">
-            <div v-for="(contatto, i) in contacts" class="content-chat" >
+            <div v-for="(contatto, i) in contacts" class="content-chat" :class="(i == index) ? 'active' : '' ">
               <div class="user" @click='index=i'>
                 <div class="content-user">
                   <img :src="imgSrc + ((i)+1) + '.jpg'" alt="">

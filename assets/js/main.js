@@ -93,11 +93,11 @@ var app = new Vue ({
 
     methods: {
 
-      selezioneContatto: function (i) {
-        this.index=i;
-        console.log(this.index, i);
-
-      },
+      // svolta velocemente sul codice
+      //selezioneContatto: function (i) {
+      //  this.index=i;
+        //console.log(this.index, i);
+      //},
 
       getData: function (date) {
         let time = new Date(date);
