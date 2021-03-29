@@ -92,6 +92,10 @@ var app = new Vue ({
       ]
     }, //Chiusura data
 
+    computed: {
+
+    },
+
     methods: {
 
       // svolta velocemente
@@ -135,16 +139,19 @@ var app = new Vue ({
         }
 
         //Risposta automatica
-        // setTimeout(function() {
-        //   var replyMessage = {
-        //     data: orario,
-        //     text: 'Va bene',
-        //     status: 'received',
-        //   }
-        //   console.log(replyMessage);
-        //   console.log(this.contacts[this.index].messages);
-        //   // this.contacts[this.index].messages.push(replyMessage);
-        // }, 1000);
+        var timer = setTimeout(() => {
+          var replyMessage = {
+            date: orario,
+            text: 'Va bene',
+            status: 'received',
+          }
+
+
+          console.log(replyMessage);
+          console.log(this.contacts[this.index].messages);
+          this.contacts[this.index].messages.push(replyMessage);
+          console.log(this.contacts[this.index].messages);
+        }, 1000);
 
 
 
