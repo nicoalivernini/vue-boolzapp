@@ -108,10 +108,29 @@ var app = new Vue ({
       },
 
       insertMessage: function () {
-        let newMessage = this.newMessage;
-        console.log(newMessage);
+        var today = new Date();
+        var date = today.getHours() + '-' + today.getMinutes();
+
+        var newMessage = {
+            date: date,
+            text: this.newMessage,
+            status: 'sent',
+          };
+
+        this.contacts[this.index].messages.push(newMessage);
         this.newMessage = '';
       }
+
+
+
+      // if (this.toDoUtente != '') {
+      //   var newObj = {
+      //     title: this.toDoUtente,
+      //     scope: 'to-do'
+      //   }
+      //   this.toDos.push(newObj);
+      //   this.toDoUtente = '';
+      // }
 
     }, //Chiusura methods
 
