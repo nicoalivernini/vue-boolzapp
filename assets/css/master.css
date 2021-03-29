@@ -37,7 +37,7 @@
 
 .navbar {
   width: 100%;
-  height: 7%;
+  height: 70px;
   display: flex;
 }
 
@@ -115,6 +115,7 @@
   width: 60%;
   height: 100%;
   /* background-color: red; */
+  position: relative;
 }
 
 /* MODIFICHE LEFT MAIN */
@@ -224,12 +225,13 @@
 }
 
 .content-conversation {
-  height: 95%;
+  height: calc(100% - 50px);
   padding: 0 65px;
 }
 
 .text-conversation {
   position: relative;
+  margin-bottom: 5px;
 }
 
 .content-conversation .sent svg {
@@ -253,13 +255,20 @@
   font-family: 'Source Sans Pro', sans-serif;
 }
 
+.content-conversation .bg-text-conversation .date {
+  font-family: 'Source Sans Pro', sans-serif;
+  float: right;
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.45);
+}
+
 .footer-conversation {
   position: absolute;
   bottom: 0;
   right: 0;
   background-color: #EDEDED;
-  width: 60%;
-  height: 5%;
+  width: 100%;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;

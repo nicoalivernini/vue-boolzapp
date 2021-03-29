@@ -3,6 +3,7 @@ var app = new Vue ({
     el: '#root',
     data: {
       imgSrc: 'assets/img/avatar_',
+      index: 0,
       contacts: [
       	{
       		name: 'Michele',
@@ -90,18 +91,18 @@ var app = new Vue ({
       ]
     }, //Chiusura data
 
-    computed: {
-
-      selezioneMessaggi: function () {
-      let messageSent = contacts.filter(this.contacts.messages.status == 'sent');
-      let messageReceived = contacts.filter(this.contacts.messages.status == 'received');
-      console.log(messageSent, messageReceived);
-    }
-
-  }, // Chiusura Computed
-
     methods: {
 
+      selezioneContatto: function (i){
+        console.log('selezione presa');
+      },
+
+      getData: function (date) {
+        let time = new Date(date);
+        let ore = time.getHours();
+        let minuti = time.getMinutes();
+        return `${ore}:${minuti}`;
+      }
 
     }, //Chiusura methods
 
