@@ -67,8 +67,8 @@
             </div>
           </div>
           <div class="chat">
-            <div v-for="(contatto, i) in contacts" class="content-chat">
-              <div class="user" @click='selezioneContatto'>
+            <div v-for="(contatto, i) in contacts" class="content-chat" >
+              <div class="user" @click='index=i'>
                 <div class="content-user">
                   <img :src="imgSrc + ((i)+1) + '.jpg'" alt="">
                 </div>

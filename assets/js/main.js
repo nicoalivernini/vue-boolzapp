@@ -93,9 +93,10 @@ var app = new Vue ({
 
     methods: {
 
-      selezioneContatto: function (i){
-        this.index = i;
-        console.log('entrato');
+      selezioneContatto: function (i) {
+        this.index=i;
+        console.log(this.index, i);
+
       },
 
       getData: function (date) {
