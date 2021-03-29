@@ -100,6 +100,7 @@ var app = new Vue ({
         //console.log(this.index, i);
       //},
 
+      //Inserimento orario messaggio
       getData: function (date) {
         let time = new Date(date);
         let ore = time.getHours();
@@ -107,6 +108,8 @@ var app = new Vue ({
         return `${ore}:${minuti}`;
       },
 
+
+      // Lista messaggi della chat
       insertMessage: function () {
         let today = new Date();
         let giorno = today.getDay();
@@ -115,32 +118,39 @@ var app = new Vue ({
         let ora = today.getHours();
         let minuti = today.getMinutes();
         let secondi = today.getSeconds();
-
+        //Stampo la data del messaggio
         let orario = `${giorno}/${mese}/${anno} ${ora}:${minuti}:${secondi}`;
 
-        console.log(orario);
+
+        //Scrivo il nuovo messaggio
+        if (this.newMessage != '') {
+          var newMessage = {
+            date: orario,
+            text: this.newMessage,
+            status: 'sent',
+          };
+
+          this.contacts[this.index].messages.push(newMessage);
+          this.newMessage = '';
+        }
+
+        //Risposta automatica
+        // setTimeout(function() {
+        //   var replyMessage = {
+        //     data: orario,
+        //     text: 'Va bene',
+        //     status: 'received',
+        //   }
+        //   console.log(replyMessage);
+        //   console.log(this.contacts[this.index].messages);
+        //   // this.contacts[this.index].messages.push(replyMessage);
+        // }, 1000);
 
 
-        var newMessage = {
-          date: orario,
-          text: this.newMessage,
-          status: 'sent',
-        };
 
-        this.contacts[this.index].messages.push(newMessage);
-        this.newMessage = '';
+
       }
 
-
-
-      // if (this.toDoUtente != '') {
-      //   var newObj = {
-      //     title: this.toDoUtente,
-      //     scope: 'to-do'
-      //   }
-      //   this.toDos.push(newObj);
-      //   this.toDoUtente = '';
-      // }
 
     }, //Chiusura methods
 
