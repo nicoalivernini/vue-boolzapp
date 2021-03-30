@@ -4,6 +4,7 @@ var app = new Vue ({
     data: {
       imgSrc: 'assets/img/avatar_',
       index: 0,
+      indexCurrent: this.index,
       newMessage: '',
       searchUtente: '',
       contacts: [
@@ -150,10 +151,28 @@ var app = new Vue ({
         }
       },
 
+      //Ultimo accesso
+      lastAccess: function (index) {
+          const lastMessage = this.contacts[this.index].messages;
+          const lastIndex = lastMessage.length - 1;
+
+          return lastMessage[lastIndex].date;
+      },
+
+      // //Ultimo messaggio
+      // lastMessage: function (index) {
+      //     const lastMessage = this.contacts[this.index].messages;
+      //     const lastIndex = lastMessage.length - 1;
+      //
+      //     return lastMessage[lastIndex].text;
+      // }
+
+
+
       //Ricerca
-      ricerca: function () {
-        console.log(this.searchUtente);
-      }
+      // ricerca: function () {
+      //   console.log(this.searchUtente);
+      // }
 
 
     }, //Chiusura methods

@@ -38,7 +38,7 @@
               <img :src="imgSrc + ((index)+1) + '.jpg'" alt="">
               <div class="text-title">
                 <p>{{ contacts[index].name }}</p>
-                <p>Ultimo accesso alle: 15:30</p>
+                <p>Ultimo accesso alle: {{ lastAccess(index) }}</p>
               </div>
             </div>
             <div class="content-icon">
@@ -75,7 +75,7 @@
                 </div>
                 <div class="text-user">
                   <p>{{ contatto.name }}</p>
-                  <span>Ultimo messaggio</span>
+                  <span>Ultimo Messaggio</span>
                 </div>
               </div>
             </div>
