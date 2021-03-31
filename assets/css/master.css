@@ -174,7 +174,7 @@
 .search .content-search input {
   padding: 5px;
   border: 0;
-  width: 85%;
+  width: 75%;
 }
 
 .search .content-search input::placeholder{
@@ -205,6 +205,7 @@
   justify-content: flex-start;
   align-items: center;
   padding: 10px 15px;
+  position: relative;
 }
 
 .content-user {
@@ -225,6 +226,13 @@
   font-weight: 600;
   font-size: 18px;
   letter-spacing: 1px;
+}
+
+.last-access {
+  position: absolute;
+  right: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgb(145, 145, 145);
 }
 
 /* MODIFICO RIGHT MAIN */
@@ -276,21 +284,53 @@
   color: rgba(0, 0, 0, 0.45);
 }
 
-/* .content-conversation .bg-text-conversation .menu-tendina {
-
+.icon-tendina {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  display: none;
+  padding: 2px;
+  color: #919191;
 }
 
-.content-conversation .bg-text-conversation .menu-tendina:hover {
-  display: block;
-  position: absolute;
-  top: 50%;
-  right: 0%;
-  transform: translate(-50%, -50%);
-  background-color: rgba(255, 255, 255, 1);
-  padding: 5px;
-  cursor: pointer;
-} */
+.bg-green {
+background-color: rgba(220, 248, 198, 0.9);
+}
 
+.bg-white {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.bg-text-conversation:hover .icon-tendina {
+  display: block;
+}
+
+.menu-delete {
+  display: none;
+}
+
+.menu-delete-active {
+  position: absolute;
+  top: 40px;
+  background-color: white;
+  padding: 15px;
+  font-family: 'Source Sans Pro', sans-serif;
+  z-index: 1;
+  box-shadow: 1px 1px 4px #919191;
+  display: block;
+}
+
+.option-conversation {
+  margin: 0 5px;
+}
+
+.tendina-on {
+  display: block;
+}
+
+.tendina-off {
+  display: none;
+}
 
 .footer-conversation {
   position: absolute;
@@ -329,17 +369,21 @@
 .sent {
   display: flex;
   justify-content: flex-end;
+  position: relative;
 }
 
 .sent .bg-text-conversation {
   background-color: rgb(220, 248, 198);
   padding:6px 7px 8px 9px;
   border-radius: 5px;
+  display: flex;
+  align-items: flex-end;
 }
 
 .received {
   display: flex;
   align-items: flex-start;
+  position: relative;
 }
 
 .received .bg-text-conversation {
@@ -347,6 +391,8 @@
   padding:6px 7px 8px 9px;
   border-radius: 5px;
   position: relative;
+  display: flex;
+  align-items: flex-end;
 }
 
 .active {

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Vue Boolzap</title>
+  <title>Vue Boolzapp</title>
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
@@ -38,7 +38,7 @@
               <img :src="imgSrc + ((index)+1) + '.jpg'" alt="">
               <div class="text-title">
                 <p>{{ contacts[index].name }}</p>
-                <p>Ultimo accesso il: {{ lastAccess(index) }}</p>
+                <p>Ultimo accesso il: {{ lastAccessUtente(index) }}</p>
               </div>
             </div>
             <div class="content-icon">
@@ -75,25 +75,31 @@
                 </div>
                 <div class="text-user">
                   <p>{{ contatto.name }}</p>
-                  <span>Ultimo Messaggio</span>
+                  <span>{{ lastMessage(i) }}</span>
                 </div>
-                <!-- <div class="last-access">
-                  <span>{{ lastAccess(index) }}</span>
-                </div> -->
+                <div class="last-access">
+                  <span>{{ lastAccess(contatto.messages[contatto.messages.length - 1].date) }}</span>
+                </div>
               </div>
             </div>
           </div>
         </div>
         <div class="right-main">
-          <div class="conversation">
-            <div class="content-conversation" >
-              <div class="text-conversation" :class="messaggio.status" v-for="messaggio in contacts[index].messages">
+          <div class="conversation" >
+            <div class="content-conversation">
+              <div class="text-conversation" :class="messaggio.status" v-for="(messaggio, i) in contacts[index].messages">
                 <div class="bg-text-conversation">
-                  <p class="message">{{messaggio.text}}</p>
-                  <span class="date">{{getData(messaggio.date)}}</span>
-                  <!-- <div class="menu-tendina"><i class="fas fa-chevron-down"></i></div> -->
+                  <p class="message" @click="closeTendina()">{{messaggio.text}}</p>
+                  <div class="option-conversation">
+                    <span class="date">{{getData(messaggio.date)}}</span>
+                    <div class="icon-tendina" :class="(messaggio.status == 'sent') ? 'bg-green' : 'bg-white' ">
+                      <i class="fas fa-chevron-down" @click="openTendina(i)"></i>
+                    </div>
+                  </div>
                 </div>
-                <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 13" width="8" height="13"><path opacity=".13" d="M5.188 1H0v11.193l6.467-8.625C7.526 2.156 6.958 1 5.188 1z"></path><path fill="currentColor" d="M5.188 0H0v11.193l6.467-8.625C7.526 1.156 6.958 0 5.188 0z"></path></svg> -->
+                <div class="menu-delete" :class="(clickTendina == 'true') ? 'menu-delete-active' : '' " @click="deleteMessage(i)" v-if="i == messageIndex" >
+                  <p>Cancella messaggio</p>
+                </div>
               </div>
             </div>
           </div>

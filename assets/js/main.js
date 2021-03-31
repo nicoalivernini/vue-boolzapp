@@ -7,6 +7,8 @@ var app = new Vue ({
       newMessage: '',
       searchInput: '',
       classSearch: '',
+      clickTendina: '',
+      messageIndex: '',
       contacts: [
       	{
       		name: 'Michele',
@@ -94,19 +96,8 @@ var app = new Vue ({
       ]
     }, //Chiusura data
 
-    computed: {
-
-
-
-    },//Chiusura Computed
-
+    
     methods: {
-
-      // svolta velocemente
-      //selezioneContatto: function (i) {
-      //  this.index=i;
-        //console.log(this.index, i);
-      //},
 
       //Inserimento orario messaggio
       getData: function (date) {
@@ -143,6 +134,7 @@ var app = new Vue ({
           this.contacts[indexCurrent].messages.push(newMessage);
           this.newMessage = '';
 
+
           //Risposta automatica
           var timer = setTimeout(() => {
             var replyMessage = {
@@ -155,23 +147,48 @@ var app = new Vue ({
         }
       },
 
-      
 
       //Ultimo accesso
-      lastAccess: function (index) {
+      lastAccessUtente: function (index) {
           const lastMessage = this.contacts[index].messages;
           const lastIndex = lastMessage.length - 1;
 
           return lastMessage[lastIndex].date;
       },
 
-      // //Ultimo messaggio
-      // lastMessage: function (index) {
-      //     const lastMessage = this.contacts[this.index].messages;
-      //     const lastIndex = lastMessage.length - 1;
-      //
-      //     return lastMessage[lastIndex].text;
-      // }
+
+      //Ultimo messaggio
+      lastMessage: function (index) {
+        const lastMessage = this.contacts[index].messages;
+        const lastIndex = lastMessage.length - 1;
+
+        return lastMessage[lastIndex].text;
+      },
+
+      lastAccess: function (date) {
+        let data = new Date(date);
+        let ora = data.getHours();
+        let minuti = data.getMinutes();
+        return `${ora}:${minuti}`;
+      },
+
+
+      //Apertura menù tendina
+      openTendina: function(i) {
+        this.messageIndex = i;
+
+        this.clickTendina = 'true';
+      },
+
+      //Chiusura menù a tendina cliccando sul testo del messaggio
+      closeTendina: function () {
+        this.clickTendina = 'false';
+      },
+
+      //Cancellazione del messaggio
+      deleteMessage: function (index) {
+        this.contacts[this.index].messages.splice(index, 1)
+      }
 
 
     }, //Chiusura methods
