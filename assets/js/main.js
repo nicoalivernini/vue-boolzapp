@@ -96,7 +96,19 @@ var app = new Vue ({
       ]
     }, //Chiusura data
 
-    
+    created: function() {
+      //Sistemo date e ore
+      this.contacts.forEach((contact, i) => {
+        contact.messages.forEach((message, k) => {
+          let temp = message.date.split(' ')[0];
+          let tempo = temp.split('/');
+          let newDate = tempo[2] + '-' + tempo[1] + '-' + tempo[0] + ' ' + message.date.split(' ')[1];
+          message.date = newDate;
+        });
+      });
+    },
+
+
     methods: {
 
       //Inserimento orario messaggio
