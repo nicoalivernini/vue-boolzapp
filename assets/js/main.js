@@ -177,6 +177,7 @@ var app = new Vue ({
         return lastMessage[lastIndex].text;
       },
 
+      //Ultimo accesso chat
       lastAccess: function (date) {
         let data = new Date(date);
         let ora = data.getHours();
