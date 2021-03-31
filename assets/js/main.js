@@ -4,9 +4,9 @@ var app = new Vue ({
     data: {
       imgSrc: 'assets/img/avatar_',
       index: 0,
-      indexCurrent: this.index,
       newMessage: '',
-      searchUtente: '',
+      searchInput: '',
+      classSearch: '',
       contacts: [
       	{
       		name: 'Michele',
@@ -96,6 +96,8 @@ var app = new Vue ({
 
     computed: {
 
+
+
     },//Chiusura Computed
 
     methods: {
@@ -129,6 +131,8 @@ var app = new Vue ({
 
 
         //Scrivo il nuovo messaggio
+        const indexCurrent = this.index;
+
         if (this.newMessage != '') {
           var newMessage = {
             date: orario,
@@ -136,7 +140,7 @@ var app = new Vue ({
             status: 'sent',
           };
 
-          this.contacts[this.index].messages.push(newMessage);
+          this.contacts[indexCurrent].messages.push(newMessage);
           this.newMessage = '';
 
           //Risposta automatica
@@ -146,14 +150,16 @@ var app = new Vue ({
               text: 'Va bene',
               status: 'received',
             }
-            this.contacts[this.index].messages.push(replyMessage);
+            this.contacts[indexCurrent].messages.push(replyMessage);
           }, 1000);
         }
       },
 
+      
+
       //Ultimo accesso
       lastAccess: function (index) {
-          const lastMessage = this.contacts[this.index].messages;
+          const lastMessage = this.contacts[index].messages;
           const lastIndex = lastMessage.length - 1;
 
           return lastMessage[lastIndex].date;
@@ -165,13 +171,6 @@ var app = new Vue ({
       //     const lastIndex = lastMessage.length - 1;
       //
       //     return lastMessage[lastIndex].text;
-      // }
-
-
-
-      //Ricerca
-      // ricerca: function () {
-      //   console.log(this.searchUtente);
       // }
 
 

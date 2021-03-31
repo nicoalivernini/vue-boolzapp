@@ -194,6 +194,12 @@
   border-bottom: 1px solid rgb(217, 215, 217);
 }
 
+.content-chat:hover {
+  width: 100%;
+  background-color: #F0F0F0;
+  border-bottom: 1px solid rgb(217, 215, 217);
+}
+
 .user {
   display: flex;
   justify-content: flex-start;
@@ -345,4 +351,8 @@
 
 .active {
   background-color: #f0f0f0;
+}
+
+.search-none {
+  display: none;
 }
