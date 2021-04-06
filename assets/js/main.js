@@ -163,26 +163,48 @@ var app = new Vue ({
       //Ultimo accesso
       lastAccessUtente: function (index) {
           const lastMessage = this.contacts[index].messages;
-          const lastIndex = lastMessage.length - 1;
 
-          return lastMessage[lastIndex].date;
+          if (lastMessage.length) {
+            const lastIndex = lastMessage.length - 1;
+
+            return lastMessage[lastIndex].date;
+          } else {
+            return '';
+          }
+
       },
 
 
       //Ultimo messaggio
       lastMessage: function (index) {
         const lastMessage = this.contacts[index].messages;
-        const lastIndex = lastMessage.length - 1;
 
-        return lastMessage[lastIndex].text;
+        if (lastMessage.length) {
+          const lastIndex = lastMessage.length - 1;
+
+          return lastMessage[lastIndex].text;
+        } else {
+          return '';
+        }
+
       },
 
       //Ultimo accesso chat
-      lastAccess: function (date) {
-        let data = new Date(date);
-        let ora = data.getHours();
-        let minuti = data.getMinutes();
-        return `${ora}:${minuti}`;
+      lastAccess: function (contatto, index) {
+        const lastMessage = this.contacts[index].messages;
+
+        if (lastMessage.length) {
+          const date = contatto.messages[contatto.messages.length - 1].date
+
+          let data = new Date(date);
+          let ora = data.getHours();
+          let minuti = data.getMinutes();
+
+          return `${ora}:${minuti}`;
+        } else {
+          return '';
+        }
+
       },
 
 
