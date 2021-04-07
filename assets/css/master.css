@@ -209,12 +209,12 @@
 }
 
 .content-user {
-  width: 65px;
+  width: 55px;
   margin-right: 15px;
 }
 
 .chat .content-chat .user .content-user img {
-  width: 100%;
+  width: 55px;
   border-radius: 50%;
 }
 
@@ -249,6 +249,7 @@
   padding: 0 65px;
   overflow: hidden;
   overflow-y: auto;
+  padding-top: 10px;
 }
 
 .text-conversation {
@@ -401,4 +402,47 @@ background-color: rgba(220, 248, 198, 0.9);
 
 .search-none {
   display: none;
+}
+
+@media all and (max-width: 576px) {
+
+.right-navbar {
+  display: none;
+}
+
+.left-navbar {
+  width: 100%;
+}
+
+.left-main {
+  width: 100%;
+}
+
+.right-main {
+  display: none;
+}
+
+
+}
+
+@media all and (max-width: 768px) {
+
+.search .content-search input {
+  width: 65%;
+}
+
+.left-navbar .title i, .right-navbar .title i {
+  font-size: 17px;
+  margin: 0 5px;
+}
+
+.chat .content-chat .user .content-user img {
+  width: 50px;
+}
+
+.content-user {
+  width: 50px;
+  margin-right: 10px;
+}
+
 }
